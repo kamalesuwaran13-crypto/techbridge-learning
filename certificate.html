@@ -63,7 +63,7 @@ h1{font-family:Georgia,serif;font-size:43px;line-height:1.12;letter-spacing:1px;
    <div class="detail"><b id="courseDuration">5 learning modules</b><span>Course duration</span></div>
   </div>
   <div class="signatures">
-   <div class="signature"><img id="signatureImage" alt="Founder signature uploaded by admin" hidden><div class="signline"></div><strong id="founderName">KAMALESUWARAN V.</strong><small id="founderRole">Founder, TechBridge Learning</small></div>
+   <div class="signature"><img id="signatureImage" alt="Founder signature uploaded by admin" hidden><div class="signline"></div><strong>Founder</strong></div>
   </div>
   <div class="footerline"><div class="verify">SAMPLE CERTIFICATE · NOT AN OFFICIAL NPTEL/SWAYAM CERTIFICATE<br>Certificate verification will activate when the secure issuing system is implemented.</div><div class="qrbox" aria-label="Demo QR placeholder"><svg viewBox="0 0 21 21" role="img" aria-label="Demo QR pattern"><rect width="21" height="21" fill="white"/><path fill="#10213f" d="M0 0h7v7H0zM14 0h7v7h-7zM0 14h7v7H0zM2 2v3h3V2zM16 2v3h3V2zM2 16v3h3v-3zM9 0h2v2H9zM8 4h3v2H8zM9 8h2v2H9zM13 8h2v2h-2zM17 9h2v2h-2zM8 12h2v2H8zM11 13h3v2h-3zM15 14h2v2h-2zM9 17h2v2H9zM12 18h2v2h-2zM17 17h4v4h-4zM18 18v2h2v-2z"/></svg></div></div>
  </article>
@@ -76,15 +76,13 @@ h1{font-family:Georgia,serif;font-size:43px;line-height:1.12;letter-spacing:1px;
   <div class="field"><label for="learnerInput">Sample learner name</label><input id="learnerInput" value="Alex Morgan"></div>
   <div class="field"><label for="courseInput">Course title</label><input id="courseInput" value="Arduino & ESP32 Starter Lab"></div>
   <div class="field"><label for="durationInput">Course duration</label><input id="durationInput" value="5 learning modules"></div>
-  <div class="field"><label for="founderInput">Founder name</label><input id="founderInput" value="KAMALESUWARAN V."></div>
-  <div class="field"><label for="roleInput">Founder designation</label><input id="roleInput" value="Founder, TechBridge Learning"></div>
   <div class="field"><label for="signatureInput">Upload signature image (optional)</label><input id="signatureInput" type="file" accept="image/png,image/jpeg"></div>
  </div>
  <p class="admin-note">For the live platform, signature uploads and certificate approvals must be protected by real admin authentication and stored securely. This static preview does not provide that security or issue verified certificates.</p>
 </section>
 <script>
 const bind=(input,target)=>document.getElementById(input).addEventListener('input',e=>document.getElementById(target).textContent=e.target.value);
-bind('learnerInput','learnerName');bind('courseInput','courseName');bind('durationInput','courseDuration');bind('founderInput','founderName');bind('roleInput','founderRole');
+bind('learnerInput','learnerName');bind('courseInput','courseName');bind('durationInput','courseDuration');
 document.getElementById('signatureInput').addEventListener('change',e=>{const file=e.target.files&&e.target.files[0];if(!file)return;const reader=new FileReader();reader.onload=()=>{const img=document.getElementById('signatureImage');img.src=reader.result;img.hidden=false};reader.readAsDataURL(file)});
 </script>
 </body></html>

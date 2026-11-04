@@ -119,5 +119,11 @@ select c.id,m.n,m.t from (values
 ) as m(slug,n,t) join public.courses c on c.slug=m.slug
 on conflict(course_id,module_number) do update set title=excluded.title;
 
+
+-- Explicit table permissions; row-level security above limits which records are visible.
+grant select on public.courses, public.course_modules to anon, authenticated;
+grant select, insert, delete on public.module_completions to authenticated;
+grant select on public.admin_users, public.certificate_requests, public.certificates to authenticated;
+
 -- After creating your own account in student.html, run this once using your login email:
 -- insert into public.admin_users(user_id) select id from auth.users where email='YOUR_ADMIN_EMAIL' on conflict do nothing;

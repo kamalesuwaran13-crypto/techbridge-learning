@@ -12,7 +12,7 @@ In the Vercel project connected to this repository, open Settings > Environment 
 - SUPABASE_URL: Project URL from Supabase > Project Settings > API.
 - SUPABASE_ANON_KEY: Publishable key (or legacy anon public key) from Supabase > Project Settings > API.
 
-Add the variables to Production (and Preview if needed), then redeploy. Do not add a service-role key.
+Add the variables to Production (and Preview if needed), then redeploy. Do not add a service-role key. In Supabase Authentication > URL Configuration, set Site URL to your deployed TechBridge domain and add the student portal URL (your-domain/student.html) to Redirect URLs.
 
 ## 3. Make your account the only admin
 1. Open /student.html on the deployed site.
